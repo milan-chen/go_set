@@ -35,7 +35,10 @@ func (s *HashSet) Has(e interface{}) bool {
 }
 
 // Determine if a is equal to s, return bool result.
-func (s *HashSet) Equals(a HashSet) bool {
+func (s *HashSet) Equals(a Set) bool {
+	if nil == a {
+		return false
+	}
 	if s.Len() != a.Len() {
 		return false
 	}
